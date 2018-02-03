@@ -18,10 +18,25 @@
  * Here we're including a 3rd-party stylesheet we put in stylesheets/vendor written in normal CSS,
  * as well as a few custom Sass stylesheets we've written for different areas of the store
  *
- *= require_directory ./stylesheets/vendor
- *= require stylesheets/layout
- *= require stylesheets/products
- *= require stylesheets/product
+ *= require stylesheets/global
+ *= require stylesheets/about
+ *= require stylesheets/thank-you
+ *= require stylesheets/main-header
+ *= require stylesheets/main-section
+ *= require stylesheets/main-footer
+ *= require stylesheets/social-media-link
+ *= require stylesheets/creative-commons
+ *= require stylesheets/product-browser
+ *= require stylesheets/product-listing
+ *= require stylesheets/product-list-item
+ *= require stylesheets/product-page
+ *= require stylesheets/slideshow
  *= require stylesheets/cart
+ *= require stylesheets/add-to-cart-link
+ *= require stylesheets/cart-link
+ *= require stylesheets/cart-item-listing
+ *= require stylesheets/cart-item
+ *= require stylesheets/cart-header
+ *= require stylesheets/cart-footer
  *
  */

@@ -1,0 +1,18 @@
+@import 'variables';
+
+.social-media-link {
+  width: lh(1);
+  height: lh(1); 
+	cursor: pointer;
+  position: relative;
+  top: 0.1rem;
+
+  &:not(:last-child) {
+    margin-right: lh(0.5);
+  }
+}
+
+.social-media-link__icon {
+  width: lh(1);
+  height: lh(1); 
+}

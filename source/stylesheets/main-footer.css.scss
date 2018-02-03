@@ -1,0 +1,30 @@
+@import 'variables';
+
+.main-footer {
+  height: lh(4.5);
+  padding-top: lh(1);
+  padding-bottom: lh(1);
+  padding-left: lh(1);
+  padding-right: lh(1);
+
+	@media (min-width: $mq-medium) {
+		height:  lh(3);
+		padding-left: lh(2);
+		padding-right: lh(2);
+	}
+
+	@media (min-width: $mq-small) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.main-footer__item {
+	display: flex;
+	align-items: middle;
+}
+
+.main-footer__copyright {
+	margin-left: lh(0.5);
+}

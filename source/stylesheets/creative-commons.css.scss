@@ -1,0 +1,11 @@
+@import 'variables';
+
+.creative-commons {
+  text-decoration: none;
+
+  .creative-commons__icon {
+    height: lh(1);
+		width: lh(1);
+		display: inline-block;
+  }
+}

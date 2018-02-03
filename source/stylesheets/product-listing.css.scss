@@ -1,0 +1,9 @@
+@import 'variables';
+
+.product-listing {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: lh(-1);
+	margin-right: lh(-1);
+}
