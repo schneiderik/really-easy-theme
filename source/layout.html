@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Easy Press</title>
+    <title>Really Easy Press</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
   </head>
@@ -20,9 +20,11 @@
       			<span></span>
       		</label>
       		<nav class="main-header__navigation">
-      			<a href="/" class="main-header__link active">Products</a>
-      			<a href="/about" class="main-header__link ">About</a>
-            <a class="main-header__link" href="/cart">
+      			<a href="/" class="main-header__link {% if page.name == 'Home' %}active{% endif %}">Products</a>
+            {% for link_page in pages.all %}
+            <a href="{{ link_page.url }}" class="main-header__link {% if page.name == link_page.name %}active{% endif %}">{{ link_page.name }}</a>
+            {% endfor %}
+            <a class="main-header__link {% if page.name == 'Cart' %}active{% endif %}" href="/cart">
               Cart 
               {% if cart.item_count != 0 %}
                 ({{ cart.item_count }})
@@ -61,6 +63,6 @@
         <div class="main-footer__copyright">2018 Really Easy Press</div>
     	</div>
     </footer>
-    <script src="/js/index.js"></script>
+    <script src="{{ theme | theme_js_url }}"></script>
   </body>
 </html>

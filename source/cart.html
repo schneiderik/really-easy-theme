@@ -1,40 +1,51 @@
-{% if cart.items != blank %}
+<div class="cart">
+  <div class="cart__header">
+    <h1 class="cart-header__title">Cart</h1>
+  </div>
 
-<form method="post" action="/cart">
-  <ul class="unstyled">
-    {% for item in cart.items %}
-    <li>
-      <a href="{{ item.product.url }}">
-        <img src="{{ item.product.image | product_image_url size:"thumb" }}">
-      </a>
-      <h2>
-        <a href="{{ item.product.url }}">
-          {{ item.product.name }}
-          {% unless item.product.has_default_option %}
-            <em>{{ item.option.name }}</em>
-          {% endunless %}
-        </a>
-      </h2>
-      <p>
-        {{ item | item_quantity_input }}
-        {{ item.price | money_with_sign }}
-        <a href="#" class="remove">&times;</a>
-      </p>
-    </li>
-    {% endfor %}
-  </ul>
-
-  <p>
-    <strong>Subtotal</strong>
-    <span>{{ cart.subtotal | money_with_sign }}</span>
-  </p>
-  <button type="submit" name="checkout" title="Checkout">Checkout</button>
-</form>
-
-{% else %}
-
-<div>
-  <p><strong>Your cart is empty!</strong> Sounds like a good time to <a href="/">start shopping &rarr;</a></p>
+  {% if cart.item_count > 0 %}
+    <form method="post" action="/cart">
+      <div class="cart-item-listing">
+        {% for item in cart.items %}
+          <div class="cart-item">
+            <div class="cart-item__details">
+              <a href="{{ item.product.url }}">
+                <img class="cart-item__image" src="{{ item.product.image | product_image_url | constrain: '-', '200' }}" />
+              </a>
+              <div>
+                <a class="cart-item__name" href="{{ item.product.url }}">
+                  <h1>{{ item.name }}</h1>
+                </a>
+              </div>
+            </div>
+            <div class="cart-item__controls-container">
+              <div class="cart-item__controls">
+                <div class="cart-item__unit-price">{{ item.unit_price | money_with_sign }} &times;</div>
+                <a class="cart-item__remove-control">-</a>
+                <div class="cart-item__quantity">
+                  {{ item | item_quantity_input }}
+                </div>
+                <a class="cart-item__add-control">+</a>
+                &nbsp; =
+              </div>
+              <div class="cart-item__pricing">
+                <div class="cart-item__price">{{ item.price | money_with_sign }}</div>
+              </div>
+            </div>
+            <div class="cart-item__remove-container">
+              <a href="#" class="cart-item__remove remove">Remove</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="cart-footer">
+        <div class="cart-footer__total-price"><span class="cart-footer__label">Total:</span>{{ cart.total | money_with_sign }}</div>
+        <button type="submit" name="checkout" title="Checkout">Checkout</button>
+      </div>
+    </form>
+  {% else %}
+    <div class="cart-item-listing cart-item-listing--empty">
+      Your cart is empty.
+    </div>
+  {% endif %}
 </div>
-
-{% endif %}

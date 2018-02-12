@@ -6,6 +6,7 @@ $line-height: $golden-ratio * 1rem;
   @return $n * $line-height;
 }
 
+$mq-mobile-header: 640px;
 $mq-small: 540px;
 $mq-medium: 1020px;
 $mq-large: 1600px;
@@ -21,3 +22,5 @@ $blue-dark: #283593;
 $red: #F44336; 
 $purple: #7B1FA2;
 $yellow: #FFEB3B;
+
+$cart-right-padding: 6rem;

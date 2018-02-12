@@ -5,7 +5,7 @@
 	flex: 0 0 100%;
 	text-decoration: none;
 	color: #000;
-	margin-bottom: lh(3);
+	margin-bottom: lh(2);
 	padding-left: lh(1);
 	padding-right: lh(1);
 	text-align: center;
@@ -16,6 +16,7 @@
 
 	@media (min-width: $mq-medium) {
 		flex: 0 0 33.333%;
+    margin-bottom: lh(3);
 	}
 
 	@media (min-width: $mq-large) {

@@ -9,6 +9,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 
 	@media (min-width: $mq-medium) {
 		padding-left: lh(2);
@@ -33,18 +36,25 @@
 .main-header__link {
 	font-size: 24px;
 	text-decoration: none;
-	color: #999;
+	color: rgba(0,0,0,0.5);
+  mix-blend-mode: multiply;
 
 	&:not(:last-child) {
 		margin-bottom: lh(1);
 	}
 
-	&:hover {
-		cursor: pointer;
-		color: #000;
-	}
+  &:hover {
+    cursor: pointer;
+  }
+
+  .main-header__navigation & {
+    &:hover {
+      border-bottom: 1px solid rgba(0,0,0,0.5);
+    }
+  }
 
 	&.active {
+    border-bottom: 1px solid $black;
 		color: #000;
 	}
 
@@ -53,7 +63,7 @@
 		text-decoration: none;
 	}
 
-	@media (min-width: $mq-small) {
+	@media (min-width: $mq-mobile-header) {
 		&:not(:last-child) {
 			margin-right: lh(1.5);
 			margin-bottom: 0;
@@ -66,7 +76,7 @@
 
 	& + .main-header__mobile-toggle-container {
 		.main-header__navigation {
-			@media (max-width: $mq-small) {
+			@media (max-width: $mq-mobile-header) {
 				display: none;
 			}
 		}
@@ -88,7 +98,7 @@
 			transition: .5s ease-in-out;
 			cursor: pointer;
 
-			@media (min-width: $mq-small) {
+			@media (min-width: $mq-mobile-header) {
 				display: none;
 			}
 
