@@ -40,7 +40,7 @@
       </div>
       <div class="cart-footer">
         <div class="cart-footer__total-price"><span class="cart-footer__label">Total:</span>{{ cart.total | money_with_sign }}</div>
-        <button type="submit" name="checkout" title="Checkout">Checkout</button>
+        <button class="checkout-button" type="submit" name="checkout" title="Checkout">Checkout</button>
       </div>
     </form>
   {% else %}

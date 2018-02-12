@@ -6,3 +6,7 @@
 
   margin-top: lh(0.5);
 }
+
+.checkout-button {
+  @include button;
+}
