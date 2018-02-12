@@ -31,6 +31,10 @@
   position: relative;
   top: lh(0.4);
 	left: lh(-0.5);
+
+  & svg {
+    height: lh(2);
+  }
 }
 
 .main-header__link {
