@@ -192,21 +192,25 @@
         };
 
         cart.addEventListener('click', function (event) {
-          event.preventDefault()
-
           var cartItemRemoveLink = event.target.closest('.cart-item__remove');
           var cartItemIncrementLink = event.target.closest('.cart-item__add-control');
           var cartItemDecrementLink = event.target.closest('.cart-item__remove-control');
 
           if (cartItemRemoveLink) {
+            event.preventDefault()
+
             removeCartItem(cartItemRemoveLink.closest('.cart-item'));
           }
 
           if (cartItemIncrementLink) {
+            event.preventDefault()
+
             incrementCartItem(cartItemIncrementLink.closest('.cart-item'));
           }
 
           if (cartItemDecrementLink) {
+            event.preventDefault()
+
             decrementCartItem(cartItemDecrementLink.closest('.cart-item'));
           }
         });
